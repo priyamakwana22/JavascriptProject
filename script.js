@@ -255,6 +255,10 @@ btnLogin.addEventListener("click", function (e) {
       now
     );
 
+const newFeature = function(){
+  console.log('Welcome to the bankist application');
+}
+newFeature();
     console.log(locale);
     // labelDate.textContent = new Intl.DateTimeFormat('en_US').format(now)
 
@@ -628,8 +632,3 @@ setInterval(function () {
   console.log(now);
 }, 1000);
 */
-
-
-console.log("Hello");
-console.log("Git");
-console.log("Git");
