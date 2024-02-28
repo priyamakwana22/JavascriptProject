@@ -173,21 +173,20 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 
-const startLogOutTimer = function(){
+const startLogOutTimer = function () {
   let time = 100;
-  const min = String(Math.trunc(time/60)).padStart(1,0);
-  const sec = String(Math.trunc(time%60)).padStart(1,0);
+  const min = String(Math.trunc(time / 60)).padStart(1, 0);
+  const sec = String(Math.trunc(time % 60)).padStart(1, 0);
 
-  setInterval(function(){
+  setInterval(function () {
     labelTimer.textContent = `${min} : ${sec}`;
     time--;
 
-    if(time==0)
-    {
+    if (time == 0) {
       clearTimeout();
     }
-  },1000)
-}
+  }, 1000);
+};
 
 const updateUI = function (acc) {
   // Display movements
@@ -199,8 +198,6 @@ const updateUI = function (acc) {
   // Display summary
   calcDisplaySummary(acc);
 };
-
-
 
 ///////////////////////////////////////
 // Event handlers
@@ -251,14 +248,15 @@ btnLogin.addEventListener("click", function (e) {
     };
 
     const locale = navigator.language;
-    labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(
-      now
-    );
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
 
-const newFeature = function(){
-  console.log('Welcome to the bankist application');
-}
-newFeature();
+    const newFeature = function () {
+      console.log("Welcome to the bankist application");
+    };
+    newFeature();
     console.log(locale);
     // labelDate.textContent = new Intl.DateTimeFormat('en_US').format(now)
 
@@ -275,7 +273,7 @@ newFeature();
 
     // Timer
     // if (timer) clearInterval(timer);
-     startLogOutTimer();
+    startLogOutTimer();
 
     // Update UI
     updateUI(currentAccount);
